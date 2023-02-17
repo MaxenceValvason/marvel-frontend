@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Cookies from "js-cookie";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+
+//pages
+import Comics from "./pages/Comics";
+import Characters from "./pages/Characters";
+import CharacterInComics from "./pages/CharacterInComics";
+import Favorites from "./pages/Favorites";
+import Home from "./pages/Home";
+
+//components
+import Header from "./components/Header";
 
 function App() {
+  const [favoris, setFavoris] = useState(Cookies.get["favoris"] || []);
+  Cookies.set("favoris", favoris, { expires: 1 });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route
+            path="/comics"
+            element={<Comics setFavoris={setFavoris} favoris={favoris} />}
+          />
+          <Route
+            path="/characters"
+            element={<Characters setFavoris={setFavoris} favoris={favoris} />}
+          />
+          <Route path="/comics/:id" element={<CharacterInComics />} />
+          <Route
+            path="/favorites"
+            element={<Favorites setFavoris={setFavoris} favoris={favoris} />}
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }

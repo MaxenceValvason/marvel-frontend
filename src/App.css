@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.display-none {
+  display: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: black;
+}
+/* HEADER */
+/* ___________________________ */
+/* -------------------------------------- */
+/* ___________________________ */
+header {
+  background-color: black;
+  width: 100%;
+  height: 150px;
+}
+header > div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+header img {
+  object-fit: contain;
+  width: 300px;
+  height: 100px;
+  /* border: 1px yellow solid; */
+  margin-top: 20px;
+}
+/* ___________________________ */
+/* -------------------------------------- */
+/* ___________________________ */
+
+/* HOME */
+/* ___________________________ */
+/* -------------------------------------- */
+/* ___________________________ */
+main {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  /* border: 1px green solid; */
+  padding: 0px 20px 0px 15px;
+}
+
+.gallery {
+  /* border: 1px blue solid; */
+
+  display: flex;
+  height: 82vh;
+  position: relative;
+}
+
+.gallery-img {
+  min-width: 0;
+  flex: 1 1 10px;
+  object-fit: cover;
+  opacity: 0.5;
+  transition: 0.5s;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.gallery-img:hover {
+  flex: 1 1 200px;
+  opacity: 1;
+}
+.home-texts {
+  display: flex;
+  justify-content: space-around;
+}
+
+.text {
+  margin-left: 150px;
+  /* flex: 1 1; */
+  font-size: 80px;
+  background-image: url("https://media.tenor.com/npdf_JWnQMsAAAAd/the-avengers-intro.gif");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: "Bebas Neue", cursive;
+  width: 370px;
+}
+/* ___________________________ */
+/* -------------------------------------- */
+/* ___________________________ */
+/* CARD */
+/* ___________________________ */
+/* -------------------------------------- */
+/* ___________________________ */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  /* border: 1px solid blueviolet; */
+  width: 250px;
+  height: 350px;
+  box-shadow: 0 20px 45px -5px rgba(255, 0, 0, 0.832);
+  margin: 40px;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  height: 98%;
+  object-fit: cover;
+  position: relative;
+}
+
+.card-desc {
+  font-size: 1.2rem;
+  height: 0;
+  top: 0;
+  opacity: 0;
+  padding: 18px 8%;
+  background-color: #ee171f;
+  overflow-y: scroll;
+  transition: 0.8s ease;
+  position: absolute;
+  color: #fff;
+  overflow-y: hidden;
+}
+
+.card:hover .card-desc {
+  opacity: 1;
+  height: 100%;
+}
+
+h3 {
+  text-align: center;
+  color: #fff;
+  background-color: #ee171f;
+  padding: 2%;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.input-container {
+  /* border: yellow 1px solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: auto;
+}
+
+.input-field {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid red;
+  outline: 0;
+  font-size: 1.3rem;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }
