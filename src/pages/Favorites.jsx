@@ -19,24 +19,19 @@ const Favorites = ({ favoris, setFavoris }) => {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Home
-      </button>
       <div className="cards">
         {favoris.map((fav) => {
           return (
             <div key={fav._id}>
               <SummaryFav elem={fav} />
-              <div
-                onClick={() => {
-                  setDeleteFav(fav._id);
-                }}
-              >
-                <input type="checkbox" />
+              <div className="delete-fav">
+                <span
+                  onClick={() => {
+                    setDeleteFav(fav._id);
+                  }}
+                >
+                  Delete from Favorites
+                </span>
               </div>
             </div>
           );

@@ -39,11 +39,12 @@ const Summary = ({ element, setFavoris, favoris, character }) => {
         {element.description}
       </p>
       <div
+        className="add-fav"
         onClick={() => {
           setIsFavoris(!isFavoris);
         }}
       >
-        <label>Favoris</label>
+        <label>Add To Favoris</label>
       </div>
     </article>
   );

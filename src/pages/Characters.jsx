@@ -45,14 +45,33 @@ const Characters = ({ setFavoris, favoris }) => {
           }}
         />
       </div>
+      <div className="pagination">
+        <div className="pagination-before">
+          <div
+            className={page === 1 ? "display-none" : "arrow"}
+            onClick={() => {
+              setPage(page - 1);
+            }}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div className="pagination-after">
+          <div
+            className="arrow"
+            onClick={() => {
+              setPage(page + 1);
+            }}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
 
-      <button
-        onClick={() => {
-          setPage(page + 1);
-        }}
-      >
-        Page Suivante
-      </button>
       <div className="cards">
         {data.results.map((character) => {
           return (

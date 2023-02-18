@@ -27,7 +27,7 @@ const CharacterInComics = () => {
   return isLoading ? (
     <span>En cours de chargement ...</span>
   ) : (
-    <section>
+    <section className="cards">
       {data.comics.map((comic) => {
         return (
           <div key={comic._id}>
