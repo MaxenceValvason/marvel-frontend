@@ -31,7 +31,7 @@ const Comics = ({ setFavoris, favoris }) => {
   }, [search, page, skip]);
 
   return isLoading ? (
-    <span>En cours de chargement ...</span>
+    <span>En cours de chargement...</span>
   ) : (
     <section>
       <div className="input-container">
