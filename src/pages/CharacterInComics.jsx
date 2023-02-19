@@ -16,7 +16,6 @@ const CharacterInComics = () => {
         const response = await axios.get(`http://localhost:4000/comics/${id}`);
         setData(response.data);
         setIsLoading(false);
-        // console.log(response.data);
       } catch (error) {
         console.log(error.response);
       }

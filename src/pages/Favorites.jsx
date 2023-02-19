@@ -1,10 +1,8 @@
 //components
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import SummaryFav from "../components/SummaryFav";
 
 const Favorites = ({ favoris, setFavoris }) => {
-  let navigate = useNavigate();
   const [deleteFav, setDeleteFav] = useState();
 
   useEffect(() => {
