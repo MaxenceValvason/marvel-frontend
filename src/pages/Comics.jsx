@@ -17,8 +17,9 @@ const Comics = ({ setFavoris, favoris }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--marvel-backend--6dqyynyggn8p.code.run/?title=${search}&skip=${skip}&limit=${limit}`
+          `https://site--marvel-backend--6dqyynyggn8p.code.run/comics/?title=${search}&skip=${skip}&limit=${limit}`
         );
+        // https://site--marvel-backend--6dqyynyggn8p.code.run/
         setSkip((page - 1) * limit);
 
         setData(response.data);
@@ -31,7 +32,7 @@ const Comics = ({ setFavoris, favoris }) => {
   }, [search, page, skip]);
 
   return isLoading ? (
-    <span>En cours de chargement...</span>
+    <span>En cours de chargement ...</span>
   ) : (
     <section>
       <div className="input-container">
